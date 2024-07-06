@@ -38,10 +38,21 @@ async fn execute<R: Runtime>(
   Ok("success".to_string())
 }
 
+#[command]
+async fn add<R: Runtime>(
+  _app: AppHandle<R>,
+  _window: Window<R>,
+  _state: State<'_, MyState>,
+  x: u32,
+  y: u32,
+) -> Result<u32> {
+  Ok(x + y)
+}
+
 /// Initializes the plugin.
 pub fn init<R: Runtime>() -> TauriPlugin<R> {
   Builder::new("awesome")
-    .invoke_handler(tauri::generate_handler![execute])
+    .invoke_handler(tauri::generate_handler![execute, add])
     .setup(|app| {
       app.manage(MyState::default());
       Ok(())
