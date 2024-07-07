@@ -1,0 +1,4 @@
+.next/
+src/components/ui/
+src-tauri/
+tauri-plugin-awesome/
