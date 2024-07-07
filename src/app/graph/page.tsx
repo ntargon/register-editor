@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from "@/components/ui/textarea";
 
-export default function Home() {
+export default function Graph() {
   const [command, setCommand] = useState<string>("");
   const [response, setResponse] = useState<string>("");
 
@@ -24,10 +24,9 @@ export default function Home() {
     }
   }
 
-
   return (
     <>
-        <h1>Home</h1>
+        <h1>Graph</h1>
         <div className='flex'>
           <Input type='text' autoCorrect='off' value={command} onKeyDown={handleKeyDown} onChange={(event) => setCommand(event.target.value)}
           className='text-xs h-1'/>
